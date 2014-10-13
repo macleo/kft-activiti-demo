@@ -8,6 +8,10 @@
 
 **在线演示（亚马逊EC2）**：[http://aws.kafeitu.me:8080/kft-activiti-demo](http://aws.kafeitu.me:8080/kft-activiti-demo)
 
+**本地演示**   
+<http://localhost:8080//kft-activiti-demo/>
+
+
 # 框架版本
 
 * Activiti: **5.11**
