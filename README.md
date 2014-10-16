@@ -8,18 +8,19 @@
 
 **在线演示（亚马逊EC2）**：[http://aws.kafeitu.me:8080/kft-activiti-demo](http://aws.kafeitu.me:8080/kft-activiti-demo)
 
-**本地演示**   
+# **本地演示**   
 <http://localhost:8080//kft-activiti-demo/>
 
-** rest api demo **
-1.需要将activit-rest.war部署到项目同一个server下
-2.只能post访问，参看junit test 下的macleo.rest  
+# **rest api demo**  
 
 
-登录
-<http://localhost:8080/activiti-rest/service/login>  
- 部署的流程
-<http://localhost:8080/activiti-rest/service/deployments>  
+* 1.需要将activit-rest.war部署到项目同一个server下    
+* 2.只能post访问，参看junit test 下的macleo.rest  
+
+# 接口说明
+ * 登录 		<http://localhost:8080/activiti-rest/service/login>  
+ * 部署的流程	<http://localhost:8080/activiti-rest/service/deployments>  
+
 可参看：  
 <http://www.kafeitu.me/activiti/2013/01/12/kft-activiti-demo-rest.html>
 
