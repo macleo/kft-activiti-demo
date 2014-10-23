@@ -15,7 +15,13 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
-
+/**
+ * 流程管理控制器
+ * 
+ * 页面 ： 流程管理->运行中的流程
+ * @author user
+ *
+ */
 @Controller
 @RequestMapping(value = "/workflow/processinstance")
 public class ProcessInstanceController {

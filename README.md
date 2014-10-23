@@ -12,6 +12,41 @@
 
 **QQ群在线支持：**: 236540304
 
+**本地演示**: <http://localhost:8080/kft-activiti-demo>
+将数据库修改至mysql 2014.10.17.
+mvn antrun:run -Pinitdatas
+
+**页面详述**  
+文件                                    							 功能描述					位置
+menu.jsp 									对应各controller          views/main/
+dynamic-form-process-list.jsp				流程列表					views/form/	
+
+**url映射**
+url					功能描述					文件									line			function name
+task/list			任务列表(综合)				DynamicFormController				264 			taskList
+/task/todo/list		待办任务--Portlet			ActivitiController					313				
+start-process/{processDefinitionId}"	启动流程 DynamicFormController				217				
+
+用户登录后待办任务的消息是使用ajax实现的，参看js/module/main/welcom-porlet.js可得
+jquery：url: ctx + '/workflow/task/todo/list',
+
+
+
+流程列表的启动页面是：dynamic-form-process-list.jsp 
+<a class="startup-process">启动</a>
+
+流程启动也是jquery的方式， 参看js/module/form/dynamic/dynamic-process-list.js
+readFormFields的javascript函数
+url:/form/dynamic/start-process/
+
+登录正常
+但是请假申请就报错
+[kft-activiti-demo] 2014-10-18 12:45:39,261 ERROR [http-8080-1] org.hibernate.engine.jdbc.spi.SqlExceptionHelper.logExceptions(147) | Incorrect string value: '\xE7\x97\x85\xE5\x81\x87' for column 'leave_type' at row 1
+[kft-activiti-demo] 2014-10-18 12:45:39,269 ERROR [http-8080-1] me.kafeitu.demo.activiti.web.oa.leave.LeaveController.startWorkflow(88) | 启动请假流程失败：
+org.springframework.orm.jpa.JpaSystemException: could not execute statement; nested exception is org.hibernate.exception.GenericJDBCException: could not execute statement 
+
+发现是字符的问题，查看数据库的编码格式，是latin，删掉数据库，重建，问题解决
+
 # 框架版本
 
 * Activiti: **5.15.1-kft**
